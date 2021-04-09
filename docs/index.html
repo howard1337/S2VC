@@ -112,35 +112,6 @@
     <div id="loading-status">Loading......</div>
 
     <script>
-        var mode = 0;
-        var audio;
-        var filename = null;
-        function play(file_name) {
-            if (filename !== file_name) {
-                if (audio) {
-                    audio.pause();
-                }
-                audio = new Audio(file_name);
-                filename = file_name;
-                audio.play();
-            } else {
-                if (audio.paused) {
-                    audio = new Audio(file_name);
-                    filename = file_name;
-                    audio.play();
-                } else {
-                    audio.pause();
-                }
-            }
-        }
-        function switchMode() {
-            if (document.getElementById("myonoffswitch").checked) {
-                mode = 0;
-            }
-            else {
-                mode = 1;
-            }
-        }
         var wavesurfer_original_src;
         var wavesurfer_original_tgt;
         var wavesurfer_converted = [
@@ -177,11 +148,6 @@
             'unseen': 'unseen to unseen',
         }
 
-        var scenario_filename_mapping = {
-            'seen': 's2s',
-            'unseen': 'u2u',
-        }
-
         var speaker_name_mapping = {
             'seen-m2m-source': "p258",
             'seen-m2m-target': "p251",
@@ -202,15 +168,18 @@
 
         }
 
-        var root = './wavs';
 
         function lock() {
             $('#secnario').attr('disabled', 'disabled');
+            $('#task').attr('disabled', 'disabled');
+            $('#fix').attr('disabled', 'disabled');
             $('#source').attr('disabled', 'disabled');
             $('#loading-status').show();
         }
         function unlock() {
             $('#scenario').removeAttr('disabled');
+            $('#task').removeAttr('disabled');
+            $('#fix').removeAttr('disabled');
             $('#source').removeAttr('disabled');
             $('#loading-status').hide();
         }
@@ -246,9 +215,9 @@
                 });
 
                 if (fix === 'src_feat')
-                    wavesurfer_converted[j].load(root + "/" + source.toLowerCase() + "-" + feats[j].toLocaleLowerCase() + "/" + scenario + '-' + task + ".wav");
+                    wavesurfer_converted[j].load("./wavs/" + source.toLowerCase() + "-" + feats[j].toLocaleLowerCase() + "/" + scenario + '-' + task + ".wav");
                 else
-                    wavesurfer_converted[j].load(root + "/" + feats[j].toLowerCase() + "-" + source.toLocaleLowerCase() + "/" + scenario + '-' + task + ".wav");
+                    wavesurfer_converted[j].load("./wavs/" + feats[j].toLowerCase() + "-" + source.toLocaleLowerCase() + "/" + scenario + '-' + task + ".wav");
             }
             unlock();
         }
@@ -448,6 +417,9 @@
                 $("#task").val(task);
 
                 $("#result-div").append(createTable());
+                let footer = document.createElement('p');
+                footer.append('W2V: wav2vec 2.0');
+                $("#result-div").append(footer);
 
                 wavesurfer_original_src = WaveSurfer.create({
                     container: '#source-uttr-div',
@@ -471,9 +443,9 @@
                         progressColor: 'purple',
                     });
                     if (fix === 'src_feat')
-                        wavesurfer_converted[j].load(root + "/" + source.toLowerCase() + "-" + feats[j].toLocaleLowerCase() + "/" + scenario + '-' + task + ".wav");
+                        wavesurfer_converted[j].load("./wavs/" + source.toLowerCase() + "-" + feats[j].toLocaleLowerCase() + "/" + scenario + '-' + task + ".wav");
                     else
-                        wavesurfer_converted[j].load(root + "/" + feats[j].toLowerCase() + "-" + source.toLocaleLowerCase() + "/" + scenario + '-' + task + ".wav");
+                        wavesurfer_converted[j].load("./wavs/" + feats[j].toLowerCase() + "-" + source.toLocaleLowerCase() + "/" + scenario + '-' + task + ".wav");
                 }
                 unlock();
             });
