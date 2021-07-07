@@ -1,0 +1,11 @@
+sox
+gdown
+tqdm
+librosa
+soundfile
+torch==1.7.1
+torchaudio==0.7.2
+argparse
+matplotlib
+tensorboard
+-e git://github.com/pytorch/fairseq.git@1a709b2a401ac8bd6d805c8a6a5f4d7f03b923ff#egg=fairseq

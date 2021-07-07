@@ -1,0 +1,70 @@
+libri121 -> libri260:
+  source: /home/storage/Dataset/LibriTTS/test-clean/121/121726/121_121726_000025_000001.wav
+  target:
+  - /home/storage/Dataset/LibriTTS/test-clean/260/123288/260_123288_000003_000001.wav
+  - /home/storage/Dataset/LibriTTS/test-clean/260/123288/260_123288_000004_000001.wav
+  - /home/storage/Dataset/LibriTTS/test-clean/260/123288/260_123288_000005_000000.wav
+  - /home/storage/Dataset/LibriTTS/test-clean/260/123288/260_123288_000006_000000.wav
+libri121 -> p227:
+  source: /home/storage/Dataset/LibriTTS/test-clean/121/121726/121_121726_000025_000001.wav
+  target:
+  - /home/storage/Dataset/Survey/VCTK/wav48/p227/p227_005.wav
+  - /home/storage/Dataset/Survey/VCTK/wav48/p227/p227_008.wav
+  - /home/storage/Dataset/Survey/VCTK/wav48/p227/p227_011.wav
+  - /home/storage/Dataset/Survey/VCTK/wav48/p227/p227_021.wav
+libri260 -> libri121:
+  source: /home/storage/Dataset/LibriTTS/test-clean/260/123288/260_123288_000005_000000.wav
+  target:
+  - /home/storage/Dataset/LibriTTS/test-clean/121/121726/121_121726_000004_000003.wav
+  - /home/storage/Dataset/LibriTTS/test-clean/121/121726/121_121726_000005_000001.wav
+  - /home/storage/Dataset/LibriTTS/test-clean/121/121726/121_121726_000025_000000.wav
+  - /home/storage/Dataset/LibriTTS/test-clean/121/121726/121_121726_000025_000001.wav
+libri260 -> p225:
+  source: /home/storage/Dataset/LibriTTS/test-clean/260/123288/260_123288_000005_000000.wav
+  target:
+  - /home/storage/Dataset/Survey/VCTK/wav48/p225/p225_005.wav
+  - /home/storage/Dataset/Survey/VCTK/wav48/p225/p225_008.wav
+  - /home/storage/Dataset/Survey/VCTK/wav48/p225/p225_011.wav
+  - /home/storage/Dataset/Survey/VCTK/wav48/p225/p225_021.wav
+p225 -> libri260:
+  source: /home/storage/Dataset/Survey/VCTK/wav48/p225/p225_006.wav
+  target:
+  - /home/storage/Dataset/LibriTTS/test-clean/260/123288/260_123288_000003_000001.wav
+  - /home/storage/Dataset/LibriTTS/test-clean/260/123288/260_123288_000004_000001.wav
+  - /home/storage/Dataset/LibriTTS/test-clean/260/123288/260_123288_000005_000000.wav
+  - /home/storage/Dataset/LibriTTS/test-clean/260/123288/260_123288_000006_000000.wav
+p225 -> p227:
+  source: /home/storage/Dataset/Survey/VCTK/wav48/p225/p225_006.wav
+  target:
+  - /home/storage/Dataset/Survey/VCTK/wav48/p227/p227_005.wav
+  - /home/storage/Dataset/Survey/VCTK/wav48/p227/p227_008.wav
+  - /home/storage/Dataset/Survey/VCTK/wav48/p227/p227_011.wav
+  - /home/storage/Dataset/Survey/VCTK/wav48/p227/p227_021.wav
+p227 -> libri121:
+  source: /home/storage/Dataset/Survey/VCTK/wav48/p227/p227_020.wav
+  target:
+  - /home/storage/Dataset/LibriTTS/test-clean/121/121726/121_121726_000004_000003.wav
+  - /home/storage/Dataset/LibriTTS/test-clean/121/121726/121_121726_000005_000001.wav
+  - /home/storage/Dataset/LibriTTS/test-clean/121/121726/121_121726_000025_000000.wav
+  - /home/storage/Dataset/LibriTTS/test-clean/121/121726/121_121726_000025_000001.wav
+p227 -> p225:
+  source: /home/storage/Dataset/Survey/VCTK/wav48/p227/p227_020.wav
+  target:
+  - /home/storage/Dataset/Survey/VCTK/wav48/p225/p225_005.wav
+  - /home/storage/Dataset/Survey/VCTK/wav48/p225/p225_008.wav
+  - /home/storage/Dataset/Survey/VCTK/wav48/p225/p225_011.wav
+  - /home/storage/Dataset/Survey/VCTK/wav48/p225/p225_021.wav
+p228 -> p232:
+  source: /home/storage/Dataset/Survey/VCTK/wav48/p228/p228_004.wav
+  target:
+  - /home/storage/Dataset/Survey/VCTK/wav48/p232/p232_005.wav
+  - /home/storage/Dataset/Survey/VCTK/wav48/p232/p232_008.wav
+  - /home/storage/Dataset/Survey/VCTK/wav48/p232/p232_011.wav
+  - /home/storage/Dataset/Survey/VCTK/wav48/p232/p232_021.wav
+p232 -> p228:
+  source: /home/storage/Dataset/Survey/VCTK/wav48/p232/p232_016.wav
+  target:
+  - /home/storage/Dataset/Survey/VCTK/wav48/p228/p228_005.wav
+  - /home/storage/Dataset/Survey/VCTK/wav48/p228/p228_008.wav
+  - /home/storage/Dataset/Survey/VCTK/wav48/p228/p228_011.wav
+  - /home/storage/Dataset/Survey/VCTK/wav48/p228/p228_021.wav
