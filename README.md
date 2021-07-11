@@ -83,7 +83,7 @@ i.e.
 ```bash
 python3 preprocess.py
     VCTK-Corpus/wav48 \
-    LibriTTS/train-clean-360 \
+    <SECOND_Corpus_PATH> \ # more corpus if you want
     <FEATURE_NAME> \
     <WAV2VEC_PATH> \
     processed/<FEATURE_NAME>  # the output directory of preprocessed features
