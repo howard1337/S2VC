@@ -14,7 +14,7 @@ class FeatureExtractor:
             or feature_name == "fbank"
         ):
             self.extractor = (
-                torch.hub.load("s3prl/s3prl:develop", feature_name).eval().cuda()
+                torch.hub.load("s3prl/s3prl", feature_name).eval().cuda()
             )
             self.mode = 1
         elif feature_name == "wav2vec2":
