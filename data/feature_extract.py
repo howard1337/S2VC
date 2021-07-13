@@ -15,7 +15,7 @@ class FeatureExtractor:
             or feature_name == "fbank"
         ):
             self.extractor = (
-                torch.hub.load("s3prl/s3prl:superb-v1", feature_name).eval().to(device)
+                torch.hub.load("s3prl/s3prl:superb-v1", feature_name, refresh=True).eval().to(device)
             )
             self.mode = 1
         elif feature_name == "wav2vec2":
