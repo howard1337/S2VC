@@ -51,9 +51,9 @@ def main(
     """Main function."""
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    src_feat_model = FeatureExtractor(src_feat_name, wav2vec_path)
+    src_feat_model = FeatureExtractor(src_feat_name, wav2vec_path, device)
 
-    ref_feat_model = FeatureExtractor(ref_feat_name, wav2vec_path)
+    ref_feat_model = FeatureExtractor(ref_feat_name, wav2vec_path, device)
 
     print(f"[INFO] {src_feat_name} is loaded")
 
