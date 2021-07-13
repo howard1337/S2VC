@@ -68,8 +68,8 @@ def main(
 
     pbar = tqdm.tqdm(total=len(dataset), ncols=0)
     mapping = {'apc': 'fbank', 'timit_posteriorgram': 'fbank', 'cpc': 'cpc_mel', 'wav2vec2': 'wav2vec2_mel'}
-    feat_extractor = FeatureExtractor(feature_name, wav2vec_path)
-    mel_extractor = FeatureExtractor(mapping[feature_name], wav2vec_path)
+    feat_extractor = FeatureExtractor(feature_name, wav2vec_path, device)
+    mel_extractor = FeatureExtractor(mapping[feature_name], wav2vec_path, device)
     for speaker_name, audio_path, wav in dataloader:
         if wav.size(-1) < 10:
             continue

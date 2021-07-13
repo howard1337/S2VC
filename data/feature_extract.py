@@ -6,7 +6,8 @@ from data import log_mel_spectrogram
 
 
 class FeatureExtractor:
-    def __init__(self, feature_name, wav2vec2_path=None):
+    def __init__(self, feature_name, wav2vec2_path=None, device=None):
+        self.device = device
         if (
             feature_name == "apc"
             or feature_name == "cpc"
@@ -14,11 +15,11 @@ class FeatureExtractor:
             or feature_name == "fbank"
         ):
             self.extractor = (
-                torch.hub.load("s3prl/s3prl", feature_name).eval().cuda()
+                torch.hub.load("s3prl/s3prl:superb-v1", feature_name).eval().to(device)
             )
             self.mode = 1
         elif feature_name == "wav2vec2":
-            self.extractor = load_pretrained_wav2vec(wav2vec2_path).eval().cuda()
+            self.extractor = load_pretrained_wav2vec(wav2vec2_path).eval().to(device)
             self.mode = 2
         elif feature_name == "wav2vec2_mel":
             self.extractor = partial(
@@ -64,7 +65,7 @@ class FeatureExtractor:
         elif self.mode == 3:
             wavs = [wav.cpu().numpy() for wav in wavs]
             feats = [self.extractor(wav) for wav in wavs]
-            feats = [torch.FloatTensor(feat).cuda() for feat in feats]
+            feats = [torch.FloatTensor(feat).to(self.device) for feat in feats]
             return feats
 
         return feats
